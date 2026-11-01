@@ -1,0 +1,99 @@
+{
+    "ice_crystallite": {
+        "name": "Ice",
+        "concept": "White-translucent angular crystallite with cold, sharp features",
+        "base_shape": "octahedron_cluster",
+        "color_rgba": [0.9, 0.95, 1.0, 0.7],
+        "shader_properties": {
+            "roughness": 0.05,
+            "transmission": 0.9,
+            "specular": 1.0
+        },
+        "animation_idle": "floating_drift",
+        "dialogue_system": {
+            "trigger_distance_meters": 5.0,
+            "speech_bubbles": {
+                "greeting": "Feeling cold yet? Take a peek...",
+                "taunt": "You can't shatter my focus. I'm permanent.",
+                "scare": "I'm freezing right through your veins!"
+            }
+        }
+    },
+    "heroin_bag": {
+        "name": "Heroin",
+        "concept": "Slumped Ziploc bag containing white powder pooling at the bottom",
+        "base_shape": "deformed_cube_bag",
+        "color_rgba": [1.0, 1.0, 1.0, 0.4],
+        "shader_properties": {
+            "roughness": 0.3,
+            "powder_fill": 0.25
+        },
+        "animation_idle": "slumped_droop",
+        "dialogue_system": {
+            "trigger_distance_meters": 4.5,
+            "speech_bubbles": {
+                "greeting": "Just rest your eyes for a second...",
+                "taunt": "Too heavy to walk away, aren't you?",
+                "scare": "Boo!! Sleep tight forever..."
+            }
+        }
+    },
+    "weed_leaf": {
+        "name": "Weed",
+        "concept": "Cannabis-shaped 5-pointed leaf walking on root-like tendrils",
+        "base_shape": "extruded_star_leaf",
+        "color_rgba": [0.15, 0.55, 0.2, 1.0],
+        "shader_properties": {
+            "roughness": 0.6,
+            "subsurface_scattering": true
+        },
+        "animation_idle": "stem_sway",
+        "dialogue_system": {
+            "trigger_distance_meters": 6.0,
+            "speech_bubbles": {
+                "greeting": "Hey friend, relax... what's the rush?",
+                "taunt": "Just a little harmless chill, right?",
+                "scare": "Boo!! Caught in the fog!"
+            }
+        }
+    },
+    "ecstasy_pill": {
+        "name": "Ecstasy",
+        "concept": "Heart-shaped pill in bright neon orange with a center score line",
+        "base_shape": "extruded_heart",
+        "color_rgba": [1.0, 0.4, 0.0, 1.0],
+        "shader_properties": {
+            "roughness": 0.1,
+            "glossy": true,
+            "rim_glow": true
+        },
+        "animation_idle": "manic_bounce",
+        "dialogue_system": {
+            "trigger_distance_meters": 5.5,
+            "speech_bubbles": {
+                "greeting": "Feel the beat! Let's go fast!",
+                "taunt": "Your heart can't keep up with this pace!",
+                "scare": "BOO!! Overload incoming!"
+            }
+        }
+    },
+    "ketamine_capsule": {
+        "name": "Ketamine",
+        "concept": "Silver-coloured metallic pharmaceutical pill with high reflectivity",
+        "base_shape": "rounded_cylinder",
+        "color_rgba": [0.8, 0.82, 0.85, 1.0],
+        "shader_properties": {
+            "roughness": 0.15,
+            "metallic": 1.0
+        },
+        "animation_idle": "robotic_float",
+        "dialogue_system": {
+            "trigger_distance_meters": 5.0,
+            "speech_bubbles": {
+                "greeting": "Entering the K-hole... watch your step.",
+                "taunt": "Are you floating or falling? Hard to tell.",
+                "scare": "Boo!! Your mind is slipping away!"
+            }
+        }
+    }
+}

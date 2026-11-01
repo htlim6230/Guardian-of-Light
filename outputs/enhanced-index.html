@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Guardians of Light — Enhanced Characters</title>
+    <style>
+        *{box-sizing:border-box}body{margin:0;background:#08121d;color:#f0f6fa;font:15px/1.5 system-ui,Segoe UI,sans-serif;overflow:hidden}button,a{touch-action:manipulation}button{font:inherit;color:inherit;cursor:pointer;border:1px solid #36515d;background:#172b39;border-radius:12px;padding:12px 18px}button:hover{background:#244454}button:focus-visible,a:focus-visible{outline:3px solid #ffe4a4;outline-offset:4px}button:disabled{opacity:.5;cursor:default}.primary{background:#27c1bb;color:#062625;font-weight:750;border:0}.primary:hover{background:#62e1d3}.small{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#80b6bd}.muted{color:#a9bcc7}h1,h2,p{margin:0 0 18px}h1{font-size:clamp(42px,6vw,82px);line-height:1.01;letter-spacing:-.055em}h2{font-size:28px;letter-spacing:-.025em}a{color:#65dbd3}#world{position:fixed;inset:0;width:100%;height:100%}header{position:fixed;top:24px;left:30px;right:30px;display:flex;justify-content:space-between;align-items:center;z-index:2}.brand{font-weight:800;letter-spacing:.1em;font-size:14px}.brand span{color:#27c1bb;margin-right:12px}#toolbar{display:flex;gap:8px}#toolbar button{font-size:12px;padding:8px 13px;background:#0b1c2bdb}.panel{background:#0d1d2bf5;border:1px solid #2a4655;box-shadow:0 30px 100px #0008;border-radius:24px}#intro{position:fixed;left:5vw;top:50%;transform:translateY(-47%);width:min(550px,90vw);padding:32px;z-index:3;background:linear-gradient(125deg,#102a36f7,#0b1928ef)}.lead{max-width:450px;color:#b9cdd4;font-size:16px}.accent{color:#70e0cd}.pets{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:22px 0}.pet{text-align:left;padding:13px;display:flex;align-items:center;gap:12px}.pet[aria-pressed=true]{border-color:#64e1ce;background:#1a494a}.pet b{font-size:13px;display:block}.pet span{font-size:26px}.pet small{color:#abc4ca;font-size:11px}#start{width:100%}.subnote{font-size:12px;color:#9bb7bf;margin-top:14px;margin-bottom:0}#hud{position:fixed;left:28px;top:90px;width:250px;padding:18px;z-index:2}#hud p{margin:4px 0}.track{height:8px;background:#31444c;border-radius:9px;overflow:hidden;margin:10px 0}#healthbar{height:100%;background:#27c1bb;transition:width .5s,background .5s}#route{display:flex;gap:8px;margin:12px 0 0}#route i{width:28px;height:28px;border:1px solid #486573;border-radius:50%;font-size:12px;font-style:normal;display:grid;place-items:center}#route i.done{color:#062625;background:#27c1bb;border-color:#27c1bb}#objective{position:fixed;top:96px;right:28px;width:225px;padding:17px;z-index:2}#objective strong{display:block;margin-top:6px}#bottom{position:fixed;bottom:25px;left:50%;transform:translateX(-50%);z-index:2;text-align:center;width:min(600px,90vw)}#prompt{margin-bottom:12px;padding:10px 20px;border-radius:50px;background:#091a2ceb;color:#d4f3ec}#controls{font-size:12px;color:#b9ccd6;text-shadow:0 2px 4px #000}kbd{padding:3px 6px;background:#193442;border-radius:4px}#modal{position:fixed;inset:0;z-index:10;background:#030b16a8;display:grid;place-items:center;padding:20px;backdrop-filter:blur(7px)}#modal[hidden],[hidden]{display:none!important}#dialog{padding:30px;width:min(560px,100%);max-height:90vh;overflow:auto}#options{display:grid;gap:10px;margin:20px 0}#options button{text-align:left}#feedback{border-left:3px solid #27c1bb;padding:10px 14px;background:#16353c;margin:18px 0}#feedback.bad{border-color:#ff9a86;background:#382c38}#dialog .actions{display:flex;gap:10px;flex-wrap:wrap}#flash{position:fixed;inset:0;pointer-events:none;box-shadow:inset 0 0 160px #f25b75;opacity:0;z-index:11;transition:opacity .25s}#pad{position:fixed;bottom:70px;left:22px;display:grid;grid-template-columns:repeat(3,43px);gap:5px;z-index:3}#pad button{padding:9px;user-select:none;touch-action:none}#pad .up{grid-column:2}#pad .left{grid-column:1}#minimap{position:fixed;bottom:28px;right:28px;width:135px;height:150px;background:#0a1a29d9;border:1px solid #2a4655;border-radius:14px;z-index:2}.mapcaption{position:fixed;bottom:184px;right:40px;font-size:10px;letter-spacing:.12em;color:#8eadbd}#loading{position:fixed;bottom:22px;left:30px;color:#80b6bd}
+        /* Enhanced character system styles */
+        .enhanced-notice{position:fixed;top:10px;left:50%;transform:translateX(-50%);background:#27c1bb;color:#062625;padding:8px 16px;border-radius:20px;font-size:12px;font-weight:bold;z-index:100}
+        @media(max-width:700px){header{top:15px;left:18px;right:18px}.brand{font-size:11px}#intro{padding:24px;max-height:calc(100dvh - 100px);overflow:auto}h1{font-size:46px}#hud{top:70px;left:15px;width:175px;padding:12px;font-size:12px}#objective{top:70px;right:15px;width:140px;padding:12px;font-size:12px}#minimap,.mapcaption{display:none}#bottom{bottom:16px}#controls{font-size:10px}#dialog{padding:22px}#pad{bottom:94px;left:16px}.lead{font-size:14px}.pets{margin:14px 0}.pet{padding:9px;gap:8px}.enhanced-notice{font-size:10px;padding:6px 12px}}
+        #roomInfo{position:fixed;left:28px;top:280px;width:250px;padding:17px;z-index:2;font-size:12px;color:#c1d0d7}#roomInfo p{margin:10px 0 0}#roomQuote{color:#e4c6ff}#modal{background:#030b164d;backdrop-filter:blur(2px)}#dialog{margin-left:auto;margin-right:5vw;width:min(500px,95%)}.keyreward{font-size:58px;color:#f3d185;text-align:center}#toolbar{flex-wrap:wrap;justify-content:flex-end}#toolbar button{padding:7px 10px}#motion[aria-pressed=true]{color:#80ead6}#hud,#objective{background:#0d1d2be8}#intro .small{letter-spacing:.12em}#minimap{height:150px}@media(max-width:700px){header{align-items:flex-start}.brand{max-width:100px;line-height:1.3}#toolbar{max-width:245px;gap:5px}#toolbar button{font-size:10px;padding:6px 7px}#hud,#objective{top:98px}#roomInfo{top:auto;bottom:185px;left:16px;width:175px;padding:10px;font-size:10px;max-height:160px;overflow:auto}#dialog{margin:auto}#intro{transform:translateY(-42%)}#intro h1{font-size:42px}#intro .lead{font-size:13px}#roomQuote{font-size:10px}}
+    </style>
+</head>
+<body>
+    <div class="enhanced-notice">🚀 Enhanced Characters Active</div>
+    <canvas id="world" aria-label="3D city. Move your pet with W A S D or arrow keys, and press E near a character."></canvas>
+    
+    <header>
+        <div class="brand"><span>✦</span> GUARDIANS OF LIGHT</div>
+        <div id="toolbar">
+            <button id="motion" aria-pressed="false">Motion: full</button>
+            <button id="leave" hidden>Exit room</button>
+            <button id="help">Field guide</button>
+            <button id="pause" hidden>Pause</button>
+        </div>
+    </header>
+
+    <section id="intro" class="panel">
+        <p class="small">A little guardian. A big reason to keep going.</p>
+        <h1>Carry the<br><span class="accent">light home.</span></h1>
+        <p class="lead">Your owner is waiting at home. Explore five mysterious buildings in any order, protect their life-flame, and collect the five key pieces that will bring you home.</p>
+        <div class="small">Choose your guardian</div>
+        <div class="pets">
+            <button class="pet" data-pet="dog" aria-pressed="true"><span>🐕</span><div><b>Puppy</b><small>A loyal heart</small></div></button>
+            <button class="pet" data-pet="cat" aria-pressed="false"><span>🐈</span><div><b>Kitty</b><small>A gentle protector</small></div></button>
+            <button class="pet" data-pet="pig" aria-pressed="false"><span>🐹</span><div><b>Guinea pig</b><small>Small but brave</small></div></button>
+            <button class="pet" data-pet="bird" aria-pressed="false"><span>🐦</span><div><b>Cockatiel</b><small>Wings of courage</small></div></button>
+        </div>
+        <button id="start" class="primary">Begin the rescue →</button>
+        <p class="subnote">Move with WASD / arrows · E to interact · 15 questions<br>Every missed answer costs one spark. Learn, retry, keep going.<br><strong>✨ Enhanced with custom character models, proximity dialogue & visual effects!</strong></p>
+    </section>
+
+    <section id="hud" class="panel" hidden>
+        <div class="small">Your owner's flame</div>
+        <p><b id="health">5 / 5 sparks</b><span id="condition" class="muted"> · Bright</span></p>
+        <div class="track"><div id="healthbar"></div></div>
+        <p id="cleared">0 / 5 shadows cleared</p>
+        <div id="route"></div>
+    </section>
+
+    <section id="objective" class="panel" hidden>
+        <div class="small">Your journey</div>
+        <strong id="target">Ice · Frost junction</strong>
+        <span class="muted" id="distance"></span>
+    </section>
+
+    <aside id="roomInfo" class="panel" hidden>
+        <div class="small" id="roomTitle"></div>
+        <p id="roomNote"></p>
+        <p id="roomQuote"></p>
+    </aside>
+
+    <div id="bottom" hidden>
+        <div id="prompt" aria-live="polite">Follow the glowing trail to Ice.</div>
+        <div id="controls">
+            <kbd>W A S D</kbd> / <kbd>↑ ← ↓ →</kbd> Move &nbsp; 
+            <kbd>E</kbd> Interact &nbsp; 
+            <kbd>Esc</kbd> Pause
+        </div>
+    </div>
+
+    <div id="pad" hidden>
+        <button class="up" data-key="w" aria-label="Move forward">↑</button>
+        <button class="left" data-key="a" aria-label="Move left">←</button>
+        <button data-key="s" aria-label="Move backward">↓</button>
+        <button data-key="d" aria-label="Move right">→</button>
+        <button style="grid-column:2" id="touchInteract">E</button>
+    </div>
+
+    <div class="mapcaption" hidden>CITY / I · H · W · E · K</div>
+    <canvas id="minimap" width="270" height="300" hidden aria-label="City route map"></canvas>
+
+    <div id="modal" hidden>
+        <section id="dialog" class="panel" role="dialog" aria-modal="true" aria-labelledby="dialogTitle"></section>
+    </div>
+
+    <div id="flash"></div>
+    <div id="loading">Building your enhanced city…</div>
+
+    <!-- Three.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r160/three.min.js"></script>
+    
+    <!-- Enhanced Character System -->
+    <script src="../enhanced-game.js"></script>
+    <script src="../enhanced-visual-effects.js"></script>
+    <script src="../animation-integration.js"></script>
+    
+    <script>
+        // Initialize the enhanced game system
+        console.log('🚀 Loading Enhanced Character System...');
+        
+        // Check if enhanced system loaded successfully
+        if (typeof window.EnhancedGame !== 'undefined') {
+            console.log('✅ Enhanced Game System Loaded');
+            
+            // Initialize with enhanced character system
+            window.EnhancedGame.init();
+            
+        } else {
+            console.warn('⚠️ Enhanced system not found, falling back to basic system');
+            
+            // Fallback to basic initialization if enhanced system fails
+            if (typeof init !== 'undefined') {
+                init();
+            } else {
+                console.error('❌ No game system available');
+                document.getElementById('loading').textContent = 'Error: Game system not found';
+            }
+        }
+    </script>
+</body>
+</html>
